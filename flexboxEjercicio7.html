@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .flexbox-grow-0 .item {
+        flex-grow: 0;
+    }
+
+    .flexbox-grow-1 .item {
+        flex-grow: 1;
+    }
+
+    .flexbox-grow-1 .item-grow-3 {
+        flex-grow: 3;
+    }
+
+    .flexbox {
+        display: flex;
+        border: 2px solid #86835f;
+        /*margin-bottom: 2em;*/
+    }
+
+
+    .item {
+        box-sizing: border-box;
+        padding: 2em;
+        background: #86835f;
+        color: #ece69c;
+        margin: 0.25em;
+    }
+
+    .item-A {
+        padding-top: 3em;
+        padding-bottom: 8em;
+    }
+
+    .item-B {
+        padding-top: 3em;
+        padding-bottom: 8em;
+        display: flex;
+    }
+
+    .item-C {
+        /*padding-bottom: 6em;*/
+        text-align: right;
+        width: 300px;
+        
+       
+
+
+    }
+
+    .item h2 {
+        font-size: 3em;
+        text-align: center;
+        margin: 0;
+        bottom: 0;
+        color: #ece69c;
+    }
+
+    h1 {
+        margin-bottom: 3em;
+    }
+
+    .row {
+        flex-direction: row;
+
+
+    }
+
+    .col {
+        flex-direction: column;
+
+    }
+
+    .flex-grid {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: right;
+      
+         
+    }
+
+    .grid-item {
+        width: 50%;
+       
+        background: #F90;
+        border-top: solid 1px #000;
+    }
+
+    .grid-item:nth-child(odd) {
+        background: #F00;
+        flex: 0 0 200px;
+    }
+</style>
+
+<body>
+
+    <div class="flexbox flexbox-grow-1">
+        <aside class="item item-A">
+            <h2>*</h2>
+        </aside>
+        <main class="item item-B item-grow-3">
+            <div class="row">
+                <div>Centro de fisioterapia</div>
+                <div>fisioterapia general</div>
+                <div class="col">
+                    <button>Reservar cita</button>
+                    <button>Pedir presupuesto</button>
+                </div>
+            </div>
+
+        </main>
+        <aside class="item item-C ">
+            <div class="flex-grid">
+                <div class="grid-item">
+                    24 valoraciones
+                </div>
+                <div class="grid-item">
+                    8,9
+                </div>
+                <div class="grid-item">
+                    Ver comentarios
+                </div>
+                <div class="grid-item">
+                    ♠
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+
+</body>
+
+</html>

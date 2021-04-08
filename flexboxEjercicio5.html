@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        margin: 0;
+    }
+
+    header {
+        min-height: 50px;
+        background: lightcyan;
+    }
+
+    footer {
+        min-height: 50px;
+        background: PapayaWhip;
+    }
+
+    /* Trick */
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        margin-top: auto;
+    }
+</style>
+
+<body>
+    <header contentEditable>Header</header>
+    <main contentEditable>Content</main>
+    <footer contentEditable>Footer</footer>
+
+</body>
+
+</html>

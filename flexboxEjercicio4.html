@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+ 
+        }
+        .notice{
+            border: solid red;
+            vertical-align: center;
+            width: 49%;
+            height: 300px;
+                      
+        }
+
+        .active {
+            order: -1;
+            flex: 1 0 100%;
+          
+          
+            border:  solid red;
+            vertical-align: center;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="notice">1</div>
+        <div class="notice">2</div>
+        <div class="notice">3</div>
+        <div class="notice">4</div>  
+        <div class="active">5</div>
+    </div>
+
+
+</body>
+
+</html>

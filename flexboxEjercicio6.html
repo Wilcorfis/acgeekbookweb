@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .flexbox-grow-0 .item {
+        flex-grow: 0;
+    }
+
+    .flexbox-grow-1 .item {
+        flex-grow: 1;
+    }
+
+    .flexbox-grow-1 .item-grow-3 {
+        flex-grow: 3;
+    }
+
+    .flexbox {
+        display: flex;
+        border: 2px solid #86835f;
+        /*margin-bottom: 2em;*/
+    }
+
+
+    .item {
+        box-sizing: border-box;
+        padding: 2em;
+        background: #86835f;
+        color: #ece69c;
+        margin: 0.25em;
+    }
+
+    .item-A {
+        padding-bottom: 4em;
+    }
+
+    .item-B {
+        padding-top: 3em;
+        padding-bottom: 8em;
+    }
+
+    /*.item-C {
+  padding-bottom: 6em;
+}*/
+
+    .item h2 {
+        font-size: 3em;
+        text-align: center;
+        margin: 0;
+        bottom: 0;
+        color: #ece69c;
+    }
+
+    h1 {
+        margin-bottom: 3em;
+    }
+
+    header {
+        min-height: 50px;
+        background: lightcyan;
+    }
+
+    footer {
+        min-height: 50px;
+        background: PapayaWhip;
+    }
+</style>
+
+<body>
+    <header contentEditable>
+        Bienvenidos
+    </header>
+    <div class="flexbox flexbox-grow-1">
+        <aside class="item item-A">
+            <h2>A)</h2>
+        </aside>
+        <main class="item item-B item-grow-3">
+            <h2>B)</h2>
+        </main>
+        <aside class="item item-C ">
+            <h2>C)</h2>
+        </aside>
+    </div>
+    <footer contentEditable>
+        Creado por wilmer
+
+    </footer>
+
+</body>
+
+</html>
