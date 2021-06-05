@@ -5,62 +5,598 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 </head>
-<!--
-  Las dimensiones de esta composición serían las siguientes:
-El body tendrá un borde de 8px
-El contenido estará centrado dentro del body e irá dentro de un div que tendrá 106px de margen superior
-En el primer texto irá el nombre del autor con una fuente de 18px y un margen inferior de 40px
-El titular irá después con un tamaño de fuente de 32px y un margen inferior de 32px
-Cada párrafo tendrá un tamaño de fuente de 18px y un margen inferior de 27px
-El enlace tendrá un padding superior e inferior de 8px y otro izquierdo y derecho de 16px y un margen izquierdo de -16px
--->
+
 <style>
-  *{
+  * {
     font-family: sans-serif;
+
+
   }
-  body{
-    border: 8px;
-    width: 100%;
-    margin:0 auto;
-    text-align: center;
+
+  .my-navbar {
+    font-size: 18px;
   }
-  div{
-    margin-top: 106px ;
+
+  .my-main-nav {
+    list-style-type: none;
+    display: none
   }
-  p{
+
+  .my-logo {
+    padding-bottom: 6px;
+    color: rgb(252, 252, 252);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .my-nav-links {
+    text-decoration: none;
+    color: rgb(252, 252, 252)
+  }
+
+  .my-main-nav li {
+    text-align: right;
+    padding-right: 15px;
+    margin: 15px auto
+  }
+
+  .my-logo {
+    display: inline-block;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 20px
+  }
+
+  .my-navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: rgb(252, 252, 252);
+    font-size: 40px
+  }
+
+  .active {
+    display: block
+  }
+
+  @media screen and (min-width:768px) {
+
+    .my-navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      align-items: center;
+      background-color: black;
+    }
+
+    .my-main-nav {
+      display: flex;
+      margin-right: 30px;
+      flex-direction: row;
+      justify-content: flex-end
+    }
+
+    .my-main-nav li {
+      margin: 0
+    }
+
+    .my-nav-links {
+      margin-left: 40px
+    }
+
+    .my-logo {
+      margin-top: 0;
+      padding-bottom: 11px;
+    }
+
+    .my-navbar-toggle {
+      display: none
+    }
+
+    .my-logo:hover,
+    .my-nav-links:hover {
+      color: #0275d8
+    }
+  }
+
+  span {
+    width: 400px;
+    height: 200px;
+  }
+
+  .tooltip {
+    border-bottom: 1px dotted #000000;
+    color: #000000;
+    outline: none;
+    cursor: help;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .tooltip span {
+    margin-left: -999em;
+    position: absolute;
+  }
+
+  .tooltip:hover span {
+    border-radius: 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    font-family: Calibri, Tahoma, Geneva, sans-serif;
+    position: absolute;
+    left: 1em;
+    top: 2em;
+    z-index: 99;
+    margin-left: 0;
+    width: 250px;
+  }
+
+  .tooltip:hover img {
+    border: 0;
+    margin: -10px 0 0 -55px;
+    float: left;
+    position: absolute;
+  }
+
+  .tooltip:hover em {
+    font-family: Candara, Tahoma, Geneva, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 0.2em 0 0.6em 0;
+  }
+
+  .classic {
+    padding: 0.8em 1em;
+  }
+
+  .custom {
+    padding: 0.5em 0.8em 0.8em 2em;
+  }
+
+  * html a:hover {
+    background: transparent;
+  }
+
+  .help {
+    background: #9FDAEE;
+    border: 1px solid #2BB0D7;
+  }
+
+  body {
+    width: 1000px;
+    margin: 0px auto;
+
+    /*same height footer*/
+  }
+
+  div {
+    margin-top: 106px;
+  }
+
+  p {
     font-size: 18px;
     margin-bottom: 27px;
   }
-  h5{
+
+  h5 {
     font-size: 32px;
     margin-bottom: 32px;
   }
-  #autor{
+
+  #autor {
     font-size: 18px;
     margin-bottom: 40px;
   }
-  a{
-    padding: 8%,8%,16%,16%;
-    margin-left: -16px;
+
+  #enlace {
+    padding-top: 8%;
+    padding-bottom: 8%;
+    padding-right: 16%;
+    padding-left: 16%;
+    margin-left: -160px;
+  }
+
+  li {
+    margin: 10px;
+  }
+
+  .mainList {
+    list-style: none;
+
+  }
+
+  .mainList li a {
+    cursor: help;
+
   }
 
 
+
+  .site-footer {
+    background-color: black;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    font-size: 15px;
+    color: white;
+    height: 50px;
+  }
+
+  .site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .site-footer a {
+    color: #737373;
+  }
+
+  .site-footer a:hover {
+    color: #3366cc;
+    text-decoration: none;
+  }
+
+  .site-footer .social-icons {
+    text-align: right
+  }
+
+  .site-footer .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d
+  }
+
+
+
+
+
+  @media (max-width:767px) {
+    .site-footer .social-icons {
+      text-align: center
+    }
+  }
+
+  .social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+  }
+
+  .social-icons li {
+    display: inline-block;
+    margin-bottom: 4px
+  }
+
+  .social-icons li.title {
+    margin-right: 15px;
+    text-transform: uppercase;
+    color: #96a2b2;
+    font-weight: 700;
+    font-size: 13px
+  }
+
+  .social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear
+  }
+
+  .social-icons a:active,
+  .social-icons a:focus,
+  .social-icons a:hover {
+    color: #fff;
+    background-color: #29aafe
+  }
+
+  .social-icons.size-sm a {
+    line-height: 34px;
+    height: 34px;
+    width: 34px;
+    font-size: 14px
+  }
+
+  .social-icons a.facebook:hover {
+    background-color: #3b5998
+  }
+
+  .social-icons a.twitter:hover {
+    background-color: #00aced
+  }
+
+  .social-icons a.linkedin:hover {
+    background-color: #007bb6
+  }
+
+  .social-icons a.dribbble:hover {
+    background-color: #ea4c89
+  }
+
+  @media (max-width:767px) {
+    .social-icons li.title {
+      display: block;
+      margin-right: 0;
+      font-weight: 600
+    }
+  }
+
+  .my-fixed-item {
+    position: fixed;
+    min-height: 120px;
+    text-align: center;
+    word-wrap: break-word;
+    width: 252px;
+    bottom: 0;
+    right: 0;
+    background-color: aquamarine;
+  }
+  /*modal*/
+  .modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+/*Formato de la ventana*/
+.modalbox{
+    width: 400px;
+    position: relative;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+    border-radius:3px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+     
+}
+
+/*Movimientos*/
+.movedown {
+    margin: 0 auto;
+}
+.rotate {
+    margin: 10% auto;
+    -webkit-transform: scale(-5,-5);
+    transform: scale(-5,-5);
+}
+.resize {
+    margin: 10% auto;
+    width:0;
+    height:0;
+ 
+}
+.modalmask:target .movedown{       
+    margin:10% auto;
+}
+.modalmask:target .rotate{     
+    transform: rotate(360deg) scale(1,1);
+        -webkit-transform: rotate(360deg) scale(1,1);
+}
+ 
+.modalmask:target .resize{
+    width:400px;
+    height:200px;
+}
+
+/*Boton de cerrar*/
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 1px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:3px;
+ 
+}
+ 
+.close:hover {
+    background: #FAAC58;
+    color:#222;
+}
 
 </style>
 
 <body>
-  <div>
-    <p id="autor">hola mundo</p>
-    <h5>hasta el final</h5>
-    <a href="#">enlace</a>
+  <nav class="my-navbar">
+    <a href="/" class="my-logo">Your Brand</a>
+    <ul class="my-main-nav" id="js-menu">
+      <li>
+        <a href="/#aboutMe" class="my-nav-links">About</a>
+      </li>
+      <li>
+        <a href="/#servicesArea" class="my-nav-links">Services</a>
+      </li>
+      <li>
+        <a href="/#portfolio" class="my-nav-links">Portfolio</a>
+      </li>
+      <li>
+        <a async href="/contact.html" class="my-nav-links">Contact</a>
+      </li>
+      <li>
+        <a href="/blogs" class="my-nav-links">Blog</a>
+      </li>
+    </ul>
+  </nav>
 
+  <div id="contenido">
+    <p id="autor">Wilmer perez</p>
+    <h1>Chiroptera - Ciclo vital</h1>
+    <p>Suelen alcanzar la madurez sexual a los doce meses, y los sistemas de apareamiento
+      varían de una especie a otra. Algunos murciélagos tienen un comportamiento promiscuo
+      y se unen en grupos numerosos en uno o varios árboles y copulan con varios compañeros
+      cercanos. Muchos microquirópteros neotropicales mantienen y defienden pequeños «harenes»
+      de hembras. Aunque la mayoría de las especies son poliginias o promiscuas, algunas,
+      como Vampyrum spectrum, Lavia frons, Hipposideros galeritus, Nycteris hispida y varias
+      del género Kerivoula, son monógamas y, en estos casos, el macho, la hembra y su descendencia
+      viven juntos en grupos familiares y los machos pueden colaborar en la protección y alimentación de los
+      jóvenes. El comportamiento durante el cortejo es complejo en algunas especies, mientras en otras puede
+      ser casi inexistente, llegando al caso de machos de algunas especies que se aparean con hembras en
+      estado de hibernación que apenas reaccionan ante la cópula.​</p>
 
+    <p>Un gran número de especies se reproduce estacionalmente; las de zonas templadas a menudo lo hacen
+      antes de iniciar la hibernación. Todas las especies que no son criadoras estacionales se dan en
+      la zona tropical, donde los recursos son a menudo relativamente constantes todo el año.
+      La función de la cría estacional es coordinar la reproducción con la disponibilidad de recursos
+      que permita la supervivencia de los recién nacidos.53​ Los murciélagos vampiro pueden nacer en
+      cualquier época del año.</p>
+    <p>Un gran número de especies se reproduce estacionalmente; las de zonas templadas a menudo lo hacen
+      antes de iniciar la hibernación. Todas las especies que no son criadoras estacionales se dan en
+      la zona tropical, donde los recursos son a menudo relativamente constantes todo el año.
+      La función de la cría estacional es coordinar la reproducción con la disponibilidad de recursos
+      que permita la supervivencia de los recién nacidos.53​ Los murciélagos vampiro pueden nacer en
+      cualquier época del año.</p>
+    <p>Un gran número de especies se reproduce estacionalmente; las de zonas templadas a menudo lo hacen
+      antes de iniciar la hibernación. Todas las especies que no son criadoras estacionales se dan en
+      la zona tropical, donde los recursos son a menudo relativamente constantes todo el año.
+      La función de la cría estacional es coordinar la reproducción con la disponibilidad de recursos
+      que permita la supervivencia de los recién nacidos.53​ Los murciélagos vampiro pueden nacer en
+      cualquier época del año.</p>
+    <p>Un gran número de especies se reproduce estacionalmente; las de zonas templadas a menudo lo hacen
+      antes de iniciar la hibernación. Todas las especies que no son criadoras estacionales se dan en
+      la zona tropical, donde los recursos son a menudo relativamente constantes todo el año.
+      La función de la cría estacional es coordinar la reproducción con la disponibilidad de recursos
+      que permita la supervivencia de los recién nacidos.53​ Los murciélagos vampiro pueden nacer en
+      cualquier época del año.</p>
+    <p>Un gran número de especies se reproduce estacionalmente; las de zonas templadas a menudo lo hacen
+      antes de iniciar la hibernación. Todas las especies que no son criadoras estacionales se dan en
+      la zona tropical, donde los recursos son a menudo relativamente constantes todo el año.
+      La función de la cría estacional es coordinar la reproducción con la disponibilidad de recursos
+      que permita la supervivencia de los recién nacidos.53​ Los murciélagos vampiro pueden nacer en
+      cualquier época del año.</p>
+    <fieldset>
+      <legend>Tecnologias:</legend>
+      <ul class="mainList">
+        <li>
+          <a class="tooltip" href="#">Javascript
+            <span class="custom help">
+              <em>Javascript</em>
+              This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your
+              own!
+            </span>
+          </a>
 
+        </li>
+        <li>
+          <a class="tooltip" href="#">Html
+            <span class="custom help">
+              <em>Html</em>
+              This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your
+              own!
+            </span>
+          </a>
+
+        </li>
+        <li>
+          <a class="tooltip" href="#">Css
+            <span class="custom help">
+              <em>Css</em>
+              This is just an example of what you can do using a CSS tooltip, feel free to get creative and produce your
+              own!
+            </span>
+          </a>
+
+        </li>
+      </ul>
+    </fieldset>
+
+    <div>
+      <a id="enlace" href="#modal1">enlace</a>
+    </div>
   </div>
 
 
-  
+
+
+  <div class="my-navbar site-footer">
+
+    <p class="my-nav-links">Copyright &copy; 2017 All Rights Reserved by</p>
+
+
+
+    <ul class="my-main-nav social-icons" id="js-menu">
+      <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+      <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+
+  </div>
+  <div class="my-fixed-item">
+    <p>Este sitio usa cookies</p>
+    <p><a href="www.google.com">info</a></p>
+  </div>
+  <div id="modal1" class="modalmask">
+    <div class="modalbox movedown">
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>DESLIZAR</h2>
+        <p>La ventana modal aparece por arriba y se desliza hasta su posición. Un efecto simple pero elegante.</p>
+        <p>Aquí puedes incluir cualquier cosa como vídeos, mapas, formularios...</p>
+    </div>
+</div>
+<div id="modal2" class="modalmask">
+    <div class="modalbox rotate">
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>ROTAR</h2>
+        <p>Usando la propiedad transform de CSS3, podemos hacer que las ventanas aparezcan rotando.</p>
+        <p>No hay nada de Javascript, solo unas pocas lineas de CSS.</p>
+    </div>
+</div>
+<div id="modal3" class="modalmask">
+    <div class="modalbox resize">
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>REDIMENSIONAR</h2>
+        <p>También puedes redimensionar la ventana hasta hacerla desaparecer.</p>
+        <p>Las posibilidades que ofrece CSS3 son múltiples, tan solo hace falta un poco de imaginación para crear efectos realmente llamativos.</p>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 
 </body>
