@@ -1,0 +1,13 @@
+a {
+    color: red;
+    &:hover {
+      color: blue;
+    }
+    .footer & {
+      color: orange;
+      &:hover {
+        color: green;
+      }
+    }
+  }
+  /*referenciando al selector padre &*/
