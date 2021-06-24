@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
+<style>
+    .footer {
+        background: red;
+    }
+    .content1 {
+        background: yellow;
+    }
+    .header {
+        background: pink;
+    }
+    .content2{
+        background: blue;
+    }
+    .content3{
+        background: green;
+    }
+    .content{
+        display: grid;
+        height: 100vh;
+        grid-gap: 50px;
+    }
+    /*
+    Max container width	None (auto)	540px	720px	960px	1140px
+Class prefix	.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-
+    */
+</style>
+
 <body>
-    
+    <div class="container-fluid content">
+        <div class="row main justify-content-center">
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+            <div class="header col mx-1"></div>
+
+        </div>
+        <div class="row">
+            <div class="content1 col mx-1"></div>
+            <div class="content1 col mx-1"></div>
+            <div class="content1 col mx-1"></div>
+            <div class="content1 col mx-1"></div>
+            <div class="content1 col mx-1"></div>
+            <div class="content1 col mx-1"></div>
+       
+        </div>
+        <div class="row">
+            <div class="content2 col mx-1"></div>
+            <div class="content2 col mx-1"></div>
+            <div class="content2 col mx-1"></div>
+        </div>
+        <div class="row">
+            <div class="content3 col mx-1"></div>
+            <div class="content3 col mx-1"></div>
+        </div>
+        <div class="row">
+            <div class="footer col mx-1"></div>
+        </div>
+    </div>
+
 </body>
+
 </html>
